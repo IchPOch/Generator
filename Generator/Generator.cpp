@@ -9,13 +9,6 @@
 #define m time(NULL)
 static unsigned x;
 using namespace std;
-static struct seed_t
-{
-	unsigned x = 532623232;
-	unsigned y = 42342317;
-	unsigned z = 32344231;
-	unsigned w = 42314231;
-};
 class Randoms {
 private:
 	unsigned x = 53262322;
@@ -46,7 +39,6 @@ public:
 	//}
 	unsigned XorShift128()
 	{
-		static seed_t s;
 		unsigned t = x ^ (x << 11);
 		x = y;
 		y = z;
@@ -115,10 +107,10 @@ public:
 				SRA.insert(pair<unsigned, unsigned>(x, 1));
 			}
 		}
-		cout << "Procent Ne unic chisel v XOR = " << XORCH << endl;
-		cout << "Procent Ne unic chisel v GEN = " << GENCH << endl;
-		cout << "Procent Ne unic chisel v fibonachi = " << FIBCH << endl;
-		cout << "Procent Ne unic chisel v bibliotech = " << SRACH << endl;
+		cout << " Ne unic chisel v XOR = " << XORCH << endl;
+		cout << " Ne unic chisel v GEN = " << GENCH << endl;
+		cout << " Ne unic chisel v fibonachi = " << FIBCH << endl;
+		cout << " Ne unic chisel v bibliotech = " << SRACH << endl;
 
 	}
 	void test2Unic(int N, Randoms ran) {
